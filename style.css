@@ -2,6 +2,7 @@
 :root {
   --blue: #0188df;
   --black: #354046;
+  --white:#fff;
 }
 * {
   font-family: "Roboto", sans-serif;
@@ -83,7 +84,7 @@ header {
   z-index: 1000;
 }
 .header-active{
-  background: #fff;
+  background: var(--black);
   box-shadow: 0 .1rem .3rem rgba(0, 0, 0, .3);
   padding: 0.5rem 1rem;
 }
@@ -93,7 +94,7 @@ header .container {
   justify-content: space-between;
 }
 header a {
-  color: var(--black);
+  color: var(--white);
 }
 header a:hover {
   color: var(--blue);
@@ -124,24 +125,54 @@ header .fa-bars {
   cursor: pointer;
   display: none;
 }
+.home{
+  background: url(./img/bg\ header.jpg), linear-gradient(#000 , rgba(238, 238, 238, 0));
+  background-attachment: fixed;
+  clip-path: polygon(100% 0, 100% 70%, 50% 100%, 0 70%, 0 0);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+}
 
+.home .content{
+  width: 100%;
+}
+.home .content h4{
+  font-size: 4rem;
+  color: var(--white);
+}
 .home .content h1{
+  padding: 2rem 0;
   font-size: 5rem;
-  color: var(--black);
+  color: var(--white);
 }
 .home .content h1 span{
   color: var(--blue);
 }
-.home .content h3{
-  font-size: 4rem;
-  color: var(--black);
+.about .content{
+  align-items: center;
+  display: flex;
+  height: 80px;
+  overflow: hidden;
 }
-
-.about{
-  background: #eee;
+.about .content div{
+  height: 100%;
+  animation: move 6s ease-in-out infinite alternate;
+}
+@keyframes move{
+  0%{
+    transform: translateY(0px);
+  }  
+  50%{
+    transform: translateY(-40px);
+  }
+  100%{
+    transform: translateY(-80px);
+  }
 }
 .about .content .box{
-  margin: 3rem 0;
+  height: 80px;
+  margin: 0;
 }
 .about .content .box h3{
   font-size: 2.5rem;
@@ -156,11 +187,10 @@ header .fa-bars {
   padding-left: 6rem;
   color: #666;
 }
-
 .facility{
+  background: #eee;
   min-height: 100vh;
 }
-
 .facility .box-container{
   display: flex;
   justify-content: center;
@@ -170,7 +200,7 @@ header .fa-bars {
 .facility .box-container .box{
   height: 20rem;
   width: 30rem;
-  margin: 3rem;
+  margin: 2rem;
   overflow: hidden;
 }
 
